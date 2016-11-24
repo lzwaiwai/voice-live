@@ -41,7 +41,7 @@ Using npm:
       $('#currentTime-' + itemId).text(Math.floor(currentTime) + 's');
       $('#progress-' + itemId).text((progress * 100).toFixed(1) + '%')
     },
-    events: { // for cur voice
+    events: { // events for current voice
       onload: function () {
         console.log('onload');
       },
