@@ -33,7 +33,7 @@ datas.forEach(function (item, index) {
     time = '0' + item.time
   }
   tpls += '<li data-id="' + item.id + '"> \
-      第 ' + index + ' 条(' + time + 's): \
+      NO. ' + index + ' (' + time + 's): \
       <span class="play handle">play</span> \
       <span class="pause handle last">pause</span> \
       <span class="view first">time: <span id="currentTime-' + item.id + '"></span></span> \

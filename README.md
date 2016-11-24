@@ -20,7 +20,7 @@ Using npm:
 
 ## Examples
 
-![img](http://o3pvuu23u.qnssl.com/image/voiceLive.png)
+![img](http://o3b126ie1.qnssl.com/cover/5e403295-31fb-4173-b88a-46f868c612ac)
 
 ``` javascript
   var datas = [{
