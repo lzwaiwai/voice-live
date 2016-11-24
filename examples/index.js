@@ -32,15 +32,13 @@ datas.forEach(function (item, index) {
   if (item.time < 10) {
     time = '0' + item.time
   }
-  tpls += '<ul> \
-    <li data-id="' + item.id + '"> \
+  tpls += '<li data-id="' + item.id + '"> \
       第 ' + index + ' 条(' + time + 's): \
       <span class="play handle">play</span> \
       <span class="pause handle last">pause</span> \
       <span class="view first">time: <span id="currentTime-' + item.id + '"></span></span> \
       <span class="view">progress: <span id="progress-' + item.id + '"></span></span> \
-    </li> \
-  </ul>';
+    </li>';
 });
 
 var appEle = $('#app');
@@ -79,7 +77,7 @@ var howls = new VoiceLive({
       console.log('onstop');
     },
     onend: function () {
-      this.playNext();
+      this.playNext(); // for auto play next item
       console.log('onend');
     }
   }

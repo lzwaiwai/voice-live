@@ -2,7 +2,25 @@ VoiceLive.js
 
 > Voice Live function library with Howler.js.
 
+## Installation
+
+In a browser:
+
+```html
+  <script src="voiceLive.js"></script>
+```
+
+Using npm:
+
+```
+  $ npm i -g npm
+  $ npm i --save howler
+  $ npm i --save voiceLive
+```
+
 ## Examples
+
+![img](http://o3pvuu23u.qnssl.com/image/voiceLive.png)
 
 ``` javascript
   var datas = [{
@@ -40,7 +58,7 @@ VoiceLive.js
         console.log('onstop');
       },
       onend: function () {
-        this.playNext();
+        this.playNext(); // for auto play next item
         console.log('onend');
       }
     }
