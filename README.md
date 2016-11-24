@@ -13,9 +13,8 @@ In a browser:
 Using npm:
 
 ```
-  $ npm i -g npm
-  $ npm i --save howler
-  $ npm i --save voiceLive
+  $ npm i -S howler
+  $ npm i -S voiceLive
 ```
 
 ## Examples
