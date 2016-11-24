@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/lzwaiwai/voiceLive/issues"
   },
-  "main": "index.js",
+  "main": "voiceLive.js",
   "scripts": {
     "build": "npm install && grunt build"
   },
