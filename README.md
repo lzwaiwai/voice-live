@@ -37,8 +37,12 @@ Using npm:
   var vl = new LiveAudio({
     datas: this.datas, 
     step: function (itemId, currentTime, progress) { // for live process, and like a timer 
+      progress = (progress * 100).toFixed(2) // for to 100
+      if (progress > 99) {
+        progress = 100.00
+      }
       $('#currentTime-' + itemId).text(Math.floor(currentTime) + 's');
-      $('#progress-' + itemId).text((progress * 100).toFixed(1) + '%')
+      $('#progress-' + itemId).text(progress + '%')
     },
     events: { // events for current voice
       onload: function () {
