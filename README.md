@@ -36,7 +36,7 @@ Using npm:
 
   var vl = new LiveAudio({
     datas: this.datas, 
-    step: (itemId, currentTime, progress) => { // for live process, and like a timer 
+    step: function (itemId, currentTime, progress) { // for live process, and like a timer 
       $('#currentTime-' + itemId).text(Math.floor(currentTime) + 's');
       $('#progress-' + itemId).text((progress * 100).toFixed(1) + '%')
     },
