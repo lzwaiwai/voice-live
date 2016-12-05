@@ -56,9 +56,13 @@ appEle.delegate('.pause', 'click', function (event) {
 
 var howls = new VoiceLive({
   datas: this.datas,
-  step: (itemId, currentTime, progress) => {
+  step: function (itemId, currentTime, progress) {
+    progress = (progress * 100).toFixed(2)
+    if (progress > 99) {
+      progress = 100.00
+    }
     $('#currentTime-' + itemId).text(Math.floor(currentTime) + 's');
-    $('#progress-' + itemId).text((progress * 100).toFixed(1) + '%')
+    $('#progress-' + itemId).text(progress + '%')
   },
   events: {
     onload: function () {
