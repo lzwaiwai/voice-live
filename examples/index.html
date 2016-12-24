@@ -14,24 +14,46 @@
     }
     ul > li > span.handle {
       display: inline-block;
-      width: 50px;
+      width: 60px;
       padding: 2px 5px;
       text-align: center;
       background: lightgreen;
       border-radius: 5px;
     }
+    ul > li > span.pause {
+      background: lightblue;
+    }
+    ul > li > span.replace {
+      background: pink;
+    }
+    ul > li > span.destory {
+      color: #fff;
+      background: red;
+    }
     ul > li > span.handle.last {
       margin-right: 20px;
-      background: lightblue;
     }
     ul > li > span.view.first {
       display: inline-block;
       width: 100px;
     }
+
+    .destory-all, .add-voice {
+      font-size: 14px;
+      margin-left: 20px;
+      background: #fff;
+      border: 1px solid #333;
+      cursor: pointer;
+      outline: none;
+    }
+
   </style>
 </head>
 <body>
-  <ul id="app"></div>
+  <ul id="app"></ul>
+  <button class="add-voice">add one voice</button>
+  <button class="destory-all">destory all voice</button>
+
   <script src="./jquery.js"></script>
   <script src="./howler.core.min.js"></script>
   <script src="../src/voiceLive.js"></script>

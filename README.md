@@ -19,7 +19,7 @@ Using npm:
 
 ## Examples
 
-![img](http://o3b126ie1.qnssl.com/cover/5e403295-31fb-4173-b88a-46f868c612ac)
+![img](http://o4a7cbihz.qnssl.com/cover/4b602607-ceb4-4e0d-9ecd-4806a7ed2620)
 
 ``` javascript
   var datas = [{
@@ -80,3 +80,7 @@ Using npm:
 5. vl.playPre()
 
 6. vl.addVoice(data)
+
+7. vl.destory([id][,fn])
+
+8. vl.replace(id, src)
