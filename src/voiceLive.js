@@ -24,7 +24,7 @@
   };
 
   var _isArray = function (arr) {
-    return Object.prototype.toString.call(arr).indexOf('Array') === '[object Array]';
+    return Object.prototype.toString.call(arr).indexOf('Array') !== -1;
   };
 
   var VoiceLive = function (options) {
@@ -37,7 +37,7 @@
         throw new Error('options is wrong!');
       }
 
-      if (_isArray(options.datas)) {
+      if (!_isArray(options.datas)) {
         throw new Error('datas must be array');
       }
 

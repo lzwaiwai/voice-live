@@ -1,5 +1,5 @@
 /*
- voiceLive 1.0.6 Copyright (c) 2016 "Lzwai"
+ voiceLive 1.1.1 Copyright (c) 2016 "Lzwai"
  Licensed under the MIT license.
  see:  for details
 */
@@ -29,7 +29,7 @@
   };
 
   var _isArray = function (arr) {
-    return Object.prototype.toString.call(arr).indexOf('Array') === '[object Array]';
+    return Object.prototype.toString.call(arr).indexOf('Array') !== -1;
   };
 
   var VoiceLive = function (options) {
@@ -42,7 +42,7 @@
         throw new Error('options is wrong!');
       }
 
-      if (_isArray(options.datas)) {
+      if (!_isArray(options.datas)) {
         throw new Error('datas must be array');
       }
 
