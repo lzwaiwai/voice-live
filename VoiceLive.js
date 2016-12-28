@@ -1,5 +1,5 @@
 /*
- voiceLive 1.1.1 Copyright (c) 2016 "Lzwai"
+ voiceLive 1.1.2 Copyright (c) 2016 "Lzwai"
  Licensed under the MIT license.
  see:  for details
 */
@@ -111,7 +111,7 @@
       this.originLists[this.curItemIndex].src = newSrc;
     },
 
-    play: function (itemId) {
+    _playInit: function (itemId) {
       var self = this,
         item = this.playLists[itemId],
         events = this.events,
@@ -121,6 +121,7 @@
         sound = new Howl({
           src: item.src,
           volume: 1.0,
+          preload: true,
           onload: function () {
             if (events.onload) {
               events.onload.call(self);
@@ -148,22 +149,39 @@
             }
           },
           onend: function () {
+            self.playLists[itemId].currentTime = 0;
             if (events.onend) {
               events.onend.call(self);
             }
           }
         });
-      } else if (sound.playing()) {
+      }
+      return sound;
+    },
+
+    play: function (itemId) {
+      var self = this,
+        item = this.playLists[itemId],
+        sound = this._playInit(itemId);
+
+      this.pause(this.curItemId);
+
+      if (sound.playing()) {
         return;
       }
 
-      this.pause(this.curItemId);
-      sound.seek(item.currentTime.toFixed(0));
+      sound.seek(+item.currentTime.toFixed(0));
       sound.play();
 
       this.playLists[itemId].howl = sound;
       this.curItemId = item.id;
       this.curItemIndex = this._getCurItemIndex(itemId);
+
+      var nextPlayItem = this.originLists[this.curItemIndex + 1];
+      if (nextPlayItem) {
+        this._playInit(nextPlayItem.id);
+      }
+
       return this;
     },
 
@@ -246,11 +264,7 @@
         return;
       }
 
-      var sound = this.playLists[nextItem.id];
-      if (currentTime !== undefined && sound && sound.howl) {
-        sound.howl.seek(0, nextItem.id);
-      }
-
+      this.playLists[nextItem.id].currentTime = 0;
       this.play(nextItem.id);
     },
 
