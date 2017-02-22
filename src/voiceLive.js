@@ -90,6 +90,9 @@
       return this;
     },
 
+    deleteVoice: function (itemId) {
+    },
+
     replaceVoice: function (itemId, newSrc) {
       var item = this.playLists[itemId],
         sound = item && item.howl;
@@ -159,7 +162,9 @@
         item = this.playLists[itemId],
         sound = this._playInit(itemId);
 
-      this.pause(this.curItemId);
+      if (this.curItemId !== '') {
+        this.pause(this.curItemId);
+      }
 
       if (sound.playing()) {
         return;

@@ -6,8 +6,9 @@ var datas = [{
   currentTime: 0
 }, {
   id: ++idRound,
-  src: 'http://oe72nssoc.bkt.clouddn.com/28792619-0fc7-40de-a9bc-8633d32b6c05.mp3',
-  time: 20,
+  // src: 'http://oe72nssoc.bkt.clouddn.com/28792619-0fc7-40de-a9bc-8633d32b6c05.mp3',
+  src: 'http://ofe0v4nhm.qnssl.com/44da9b67-537f-4bf6-9a73-1cb67f4d6169.mp3',
+  time: 33,
   currentTime: 0
 }, {
   id: ++idRound,
@@ -91,7 +92,7 @@ var howls = new VoiceLive({
 })
 
 $(document.body).delegate('.destory-all', 'click', function () {
-  howls.destory(function (playLists) {
+  howls.destory(function (playLists) { // 需要再所有音频停止播放的时候调用，否则触发下一条重新初始化，然后继续播放
     console.log(playLists)
   })
 })
