@@ -75,12 +75,14 @@ Using npm:
 
 3. vl.stop(id)
 
-4. vl.playNext()
+4. vl.seek(id, time)
 
-5. vl.playPre()
+5. vl.playNext()
 
-6. vl.addVoice(data)
+6. vl.playPre()
 
-7. vl.destory([id][,fn])
+7. vl.addVoice(data)
 
-8. vl.replace(id, src)
+8. vl.destory([id][,fn])
+
+9. vl.replace(id, src)

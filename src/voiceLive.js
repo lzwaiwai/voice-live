@@ -211,6 +211,12 @@
       return this;
     },
 
+    seek: function (itemId, time) {
+      var self = this,
+        sound = this._playInit(itemId);
+      sound.seek(+time);
+    },
+
     destory: function (itemId, callback) {
       if (typeof itemId === 'function') {
         callback = itemId;

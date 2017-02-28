@@ -1,5 +1,5 @@
 /*
- voiceLive 1.1.3 Copyright (c) 2016 "Lzwai"
+ voiceLive 1.1.4 Copyright (c) 2016 "Lzwai"
  Licensed under the MIT license.
  see:  for details
 */
@@ -214,6 +214,12 @@
       }
 
       return this;
+    },
+
+    seek: function (itemId, time) {
+      var self = this,
+        sound = this._playInit(itemId);
+      sound.seek(+time);
     },
 
     destory: function (itemId, callback) {
