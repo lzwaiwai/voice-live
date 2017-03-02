@@ -60,7 +60,8 @@ appEle.delegate('.replace', 'click', function (event) {
 
 var howls = new VoiceLive({
   datas: this.datas,
-  step: function (itemId, currentTime, progress) {
+  step: function (itemId, currentTime, progress, duration) {
+    console.log(duration)
     progress = (progress * 100).toFixed(2)
     if (progress > 99) {
       progress = 100.00

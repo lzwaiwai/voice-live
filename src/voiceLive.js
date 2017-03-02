@@ -69,7 +69,7 @@
         var currentTime = sound.seek(),
           duration = sound.duration();
 
-        this.step(itemId, currentTime, currentTime / duration);
+        this.step(itemId, currentTime, currentTime / duration, duration);
         window.requestAnimationFrame(this._step.bind(this, itemId));
       }
     },
@@ -88,9 +88,6 @@
         }
       }
       return this;
-    },
-
-    deleteVoice: function (itemId) {
     },
 
     replaceVoice: function (itemId, newSrc) {
@@ -232,6 +229,10 @@
           return this;
         }
 
+        if (this.curItemId == itemId) {
+          this.pause(itemId);
+        }
+
         sound.unload();
         this.playLists[itemId].howl = null;
         this.playLists[itemId].currentTime = 0;
@@ -244,6 +245,9 @@
       }
 
       // destory all sound
+      if (this.curItemId) {
+        this.pause(this.curItemId);
+      }
       var keys = Object.keys(this.playLists);
       var self = this;
       keys.forEach(function (item, index) {
