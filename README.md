@@ -85,4 +85,4 @@ Using npm:
 
 8. vl.destory([id][,fn])
 
-9. vl.replace(id, src)
+9. vl.replaceVoice(id, src)
