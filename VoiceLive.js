@@ -1,4 +1,9 @@
 /*
+ voiceLive 1.1.7 Copyright (c) 2016 "Lzwai"
+ Licensed under the MIT license.
+ see:  for details
+*/
+/*
  voiceLive 1.1.6 Copyright (c) 2016 "Lzwai"
  Licensed under the MIT license.
  see:  for details
@@ -172,7 +177,7 @@
         return;
       }
 
-      sound.seek(+item.currentTime.toFixed(0));
+      sound.seek(+item.currentTime === 0 ? 0 : +item.currentTime.toFixed(0));
       sound.play();
 
       this.playLists[itemId].howl = sound;
@@ -189,12 +194,14 @@
 
     pause: function (itemId) {
       var item = this.playLists[itemId],
-        sound = item && item.howl;
+        sound = item && item.howl,
+        currentTime = 0;
 
       if (sound) {
         this.curItemId = '';
         sound.pause();
-        this.playLists[itemId].currentTime = sound.seek();
+        currentTime = sound.seek();
+        this.playLists[itemId].currentTime = (typeof currentTime !== 'object' ? +currentTime : 0);
       }
 
       return this;
