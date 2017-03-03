@@ -172,7 +172,9 @@
         return;
       }
 
-      sound.seek(+item.currentTime === 0 ? 0 : +item.currentTime.toFixed(0));
+      if (+item.currentTime !== 0) {
+        sound.seek(+item.currentTime.toFixed(0));
+      }
       sound.play();
 
       this.playLists[itemId].howl = sound;
@@ -271,7 +273,7 @@
       return this;
     },
 
-    playNext: function (currentTime) {
+    playNext: function () {
       if (this.curItemIndex === '') {
         return;
       }
