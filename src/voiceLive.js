@@ -172,9 +172,7 @@
         return;
       }
 
-      if (+item.currentTime !== 0) {
-        sound.seek(+item.currentTime.toFixed(0));
-      }
+      sound.seek(+item.currentTime === 0 ? 0 : +item.currentTime.toFixed(0));
       sound.play();
 
       this.playLists[itemId].howl = sound;
