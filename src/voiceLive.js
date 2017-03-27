@@ -48,6 +48,7 @@
 
       this.curItemId = ''; // 当前正在播放的音频ID
       this.curItemIndex = ''; // 当前正在播放的音频的顺序
+      this.format = options.format || ['mp3'];
       this.step = options.step || F; // 定时器函数
       this.events = options.events || {}; // 所有音频的播放事件监听
       this.originLists = options.datas; // 原数据 [数组，有播放顺序数据]
@@ -122,6 +123,7 @@
           src: item.src,
           volume: 1.0,
           preload: true,
+          format: this.format,
           onload: function () {
             if (events.onload) {
               events.onload.call(self);
