@@ -1,6 +1,6 @@
 'use strict'
 module.exports = function (grunt) {
-  var src = 'voiceLive'
+  var src = 'voice-live'
 
   var licenseMainLine = src + ' <%= pkg.version %> Copyright (c) 2016 "Lzwai"',
     licenseItselfLine = 'Licensed under the MIT license.',

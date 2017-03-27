@@ -1,6 +1,6 @@
 {
   "name": "voice-live",
-  "version": "1.1.11",
+  "version": "1.1.12",
   "description": "live audio",
   "keywords": [
     "voice",
@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/lzwaiwai/voiceLive.js/issues"
   },
-  "main": "voiceLive.js",
+  "main": "voice-live.js",
   "scripts": {
     "build": "npm install && grunt build"
   },
