@@ -1,29 +1,28 @@
 var idRound = 0
 var datas = [{
   id: ++idRound,
-  src: 'http://oe72nssoc.bkt.clouddn.com/8aa14d97-ba07-4a0f-a4a5-176508a40267.mp3',
-  time: 26,
+  src: 'mp3/01.mp3',
+  time: 25,
   currentTime: 0
 }, {
   id: ++idRound,
-  // src: 'http://oe72nssoc.bkt.clouddn.com/28792619-0fc7-40de-a9bc-8633d32b6c05.mp3',
-  src: 'http://ofe0v4nhm.qnssl.com/44da9b67-537f-4bf6-9a73-1cb67f4d6169.mp3',
-  time: 33,
+  src: 'mp3/02.mp3',
+  time: 22,
   currentTime: 0
 }, {
   id: ++idRound,
-  src: 'http://oe72nssoc.bkt.clouddn.com/e7e3c17e-0dab-49b0-99fe-8ac4b6449b59.mp3',
-  time: 5,
+  src: 'mp3/03.mp3',
+  time: 46,
   currentTime: 0
 }, {
   id: ++idRound,
-  src: 'http://oe72nssoc.bkt.clouddn.com/8aa14d97-ba07-4a0f-a4a5-176508a40267.mp3',
-  time: 26,
+  src: 'mp3/04.mp3',
+  time: 22,
   currentTime: 0
 }, {
   id: ++idRound,
-  src: 'http://oe72nssoc.bkt.clouddn.com/28792619-0fc7-40de-a9bc-8633d32b6c05.mp3',
-  time: 20,
+  src: 'mp3/05.mp3',
+  time: 45,
   currentTime: 0
 }]
 
@@ -55,7 +54,7 @@ appEle.delegate('.destory', 'click', function (event) {
 
 appEle.delegate('.replace', 'click', function (event) {
   var id = $(event.target).parents('li').attr('data-id')
-  replaceVoice(id, 'http://oe72nssoc.bkt.clouddn.com/e7e3c17e-0dab-49b0-99fe-8ac4b6449b59.mp3')
+  replaceVoice(id, 'mp3/07.mp3')
 })
 
 var howls = new VoiceLive({
@@ -101,8 +100,8 @@ $(document.body).delegate('.destory-all', 'click', function () {
 $(document.body).delegate('.add-voice', 'click', function () {
   var voice = {
     id: ++idRound,
-    src: 'http://oe72nssoc.bkt.clouddn.com/8aa14d97-ba07-4a0f-a4a5-176508a40267.mp3',
-    time: 26,
+    src: 'mp3/06.mp3',
+    time: 17,
     currentTime: 0
   }
   howls.addVoice(voice)

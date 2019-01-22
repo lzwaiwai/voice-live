@@ -19,7 +19,7 @@ Using npm:
 
 ## Examples
 
-![img](http://o4a7cbihz.qnssl.com/cover/4b602607-ceb4-4e0d-9ecd-4806a7ed2620)
+![demo](demo.gif)
 
 ``` javascript
   var datas = [{
@@ -35,8 +35,8 @@ Using npm:
   }];
 
   var vl = new LiveAudio({
-    datas: this.datas, 
-    step: function (itemId, currentTime, progress) { // for live process, and like a timer 
+    datas: this.datas,
+    step: function (itemId, currentTime, progress) { // for live process, and like a timer
       progress = (progress * 100).toFixed(2) // for to 100
       if (progress > 99) {
         progress = 100.00
